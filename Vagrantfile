@@ -40,5 +40,5 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, inline: "sudo apt install -y fonts-noto"
 
   # Restart
-  config.vm.provision :shell, inline: "sudo reboot -r now"
+  config.vm.provision :shell, inline: "sudo reboot now"
 end
