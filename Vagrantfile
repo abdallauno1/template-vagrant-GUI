@@ -38,7 +38,13 @@ Vagrant.configure("2") do |config|
   # Add Japanese support
   config.vm.provision :shell, inline: "sudo apt install -y fcitx-mozc"
   config.vm.provision :shell, inline: "sudo apt install -y fonts-noto"
-
+  
+  # install rdp to access via remote desktop 
+  gui.vm.provision :shell, inline: "sudo apt install xrdp"
+  # enable the service rdp
+  gui.vm.provision :shell, inline: "sudo systemctl enable xrdp"
+  
+  
   # Restart
   config.vm.provision :shell, inline: "sudo reboot now"
 end
